@@ -1,0 +1,672 @@
+/* =========================================
+   MIT-WPU LAW LIBRARY - COLOR THEME
+   ========================================= */
+
+:root {
+    --maroon: #7a1f3d;
+    --maroon-dark: #5d1630;
+    --teal: #0f4c5c;
+    --teal-dark: #083844;
+    --gold: #b26a00;
+    --gold-light: #f3c677;
+    --blue: #245b8a;
+    --purple: #6a4c93;
+    --green: #28745a;
+    --cream: #fffaf3;
+    --light-blue: #f1f7fa;
+    --light-purple: #f7f3fb;
+    --light-gold: #fff8e8;
+    --text-dark: #172033;
+}
+```css
+/* ================================
+   BASIC
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
+    background: #f7f8fb;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    background: linear-gradient(135deg, #fffaf3, #f1f7fa);
+    border-bottom: 3px solid #7a1f3d;
+}
+
+.top-header {
+    padding: 0;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand img {
+    width: 350px;
+    height: 250px;
+    object-fit: contain;
+}
+
+
+.brand-text {
+    margin-left: 0;
+}
+
+.university {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #687386;
+    margin-bottom: 6px;
+}
+
+.krc {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #7a1f3d;
+    margin-bottom: 5px;
+}
+
+.library {
+    font-size: 29px;
+    font-weight: 700;
+    color: #7a1f3d;
+    letter-spacing: 0.2px;
+    margin-top: 0;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 52px;
+
+    background: linear-gradient(
+        90deg,
+        #f7f3fb,
+        #f1f7fa,
+        #fff8e8
+    );
+
+    border-top: 1px solid #e5d7df;
+    border-bottom: 1px solid #d8e3e7;
+}
+
+nav a {
+    position: relative;
+    color: #172033;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 4px;
+    transition: 0.25s ease;
+}
+
+nav a:hover {
+    color: #7a1f3d;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 0;
+    height: 3px;
+    border-radius: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #7a1f3d,
+        #b26a00,
+        #0f4c5c
+    );
+
+    transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+background: #7a1f3d;
+
+    color: #ffffff;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 900px;
+}
+
+.welcome {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #d8e7ea;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+.hero h2 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #eef6f7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+.search-box {
+    max-width: 780px;
+    margin: 30px auto 0;
+
+    display: flex;
+
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 10px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.search-box input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    padding: 15px 18px;
+
+    font-size: 15px;
+    color: #172033;
+}
+
+.search-box button {
+    border: none;
+
+    padding: 0 28px;
+
+    background: #0f4c5c;
+    color: #ffffff;
+
+    font-weight: 600;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #083c49;
+}
+
+
+/* ================================
+   COMMON SECTION
+================================ */
+
+.at-glance,
+.services {
+    background: #ffffff;
+    padding: 10px 6%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.section-heading span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+color: #7a1f3d;
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+    font-size: 32px;
+    color: #0f4c5c;
+}
+
+
+/* ================================
+   AT A GLANCE
+================================ */
+
+.glance-cards {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.glance-card {
+    text-align: center;
+
+    padding: 25px 20px;
+
+    background: #ffffff;
+
+border: 1px solid #ead9df;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(15, 76, 92, 0.08);
+
+    transition: 0.25s;
+}
+.glance-card:hover {
+    transform: translateY(-5px);
+   box-shadow: 0 8px 20px rgba(122, 31, 61, 0.12);
+}
+
+.glance-card div {
+    font-size:5px;
+    margin-bottom:2px;
+}
+.glance-card h3 {
+    font-size: 24px;
+    margin-bottom: 6px;
+color: #7a1f3d;
+}
+
+.glance-card p {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* ================================
+   DATABASES
+================================ */
+
+.databases {
+    padding: 10px 6%;
+background: #eef5f6;
+}
+
+.database-list {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.database-list div {
+    background: #ffffff;
+
+    padding: 20px;
+
+    text-align: center;
+
+border: 1px solid #ead9df;
+    border-radius: 10px;
+
+    font-weight: 700;
+    font-size: 15px;
+    color: #0f4c5c;
+
+    box-shadow: 0 4px 15px rgba(15, 76, 92, 0.06);
+
+    transition: 0.25s;
+}
+.database-list div:hover {
+    transform: translateY(-4px);
+box-shadow: 0 8px 20px rgba(122, 31, 61, 0.12);
+}
+
+
+/* ================================
+   SERVICES
+================================ */
+
+.service-list {
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.service-card {
+    padding:15px 12px;
+    text-align:center;
+border:1px solid #ead9df;
+    border-radius:10px;
+    background:#f9fcfc;
+    transition:.25s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(122, 31, 61, 0.12);
+}
+
+.service-card div {
+    font-size:26px;
+    margin-bottom:8px;
+}
+.service-card h3 {
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.service-card p {
+    color:#64748b;
+    font-size:13px;
+    line-height:1.4;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #0f4c5c;
+    text-align: center;
+    color: #ffffff;
+    padding: 18px 20px;
+}
+
+footer h3 {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 2px 0 0;
+}
+
+footer small {
+    display: block;
+color: #ead9df;
+    font-size: 13px;
+    margin: 2px 0 0;
+}
+
+.footer-copy {
+    margin-top: 8px;
+    font-size: 12px;
+color: #ead9df;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
+
+    .top-header {
+        text-align: center;
+        justify-content: center;
+    }
+
+    nav {
+        height: auto;
+        padding: 15px 6%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .glance-cards,
+    .service-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .database-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .library {
+        font-size: 22px;
+    }
+
+    .glance-cards,
+    .service-list,
+    .database-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+    min-height: 100px;
+}
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .search-box button {
+        padding: 15px;
+    }
+}
+```
+/* ================================
+   OPAC SEARCH RESULTS
+================================ */
+
+#opac-results {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.opac-result-count {
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: bold;
+color: #7a1f3d;
+}
+
+.opac-book-result {
+    background: #ffffff;
+    padding: 22px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border-left: 5px solid #155e75;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.opac-book-result h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+color: #7a1f3d;
+}
+
+.opac-book-result p {
+    margin: 7px 0;
+    color: #3f4652;
+    line-height: 1.5;
+}
+
+.opac-details-button {
+    margin-top: 12px;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 6px;
+background: #7a1f3d;
+    color: white;
+    cursor: pointer;
+}
+
+.opac-details-button:hover {
+    opacity: 0.9;
+}
+
+.opac-book-details {
+    display: none;
+    margin-top: 18px;
+    padding: 18px;
+    background: #f5f8fa;
+    border-radius: 8px;
+    border: 1px solid #dce5e8;
+}
+
+.opac-book-details p {
+    padding: 5px 0;
+    border-bottom: 1px solid #e5e9eb;
+}
+
+.opac-close-button {
+    margin-top: 12px;
+    padding: 8px 15px;
+    border: 1px solid #7a1f3d;
+    border-radius: 5px;
+    background: white;
+    color: #7a1f3d;
+    cursor: pointer;
+}
+/* About Library - Collection Profile */
+
+.collection-info {
+    margin-top: 50px;
+    padding: 45px 35px;
+    background: linear-gradient(135deg, #f8f9fb, #eef5f6);
+    border-radius: 22px;
+    border: 1px solid #e1e8ec;
+}
+
+.library-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #dbe4f0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.profile-item:hover {
+    transform: translateY(-5px);
+    border-color: #7a1f3d;
+    box-shadow: 0 12px 28px rgba(122, 31, 61, 0.12);
+}
+.profile-item > span {
+    font-size: 14px;
+    font-weight: 800;
+    color: #7a1f3d;
+    min-width: 55px;
+    white-space: nowrap;
+}
+
+.profile-item > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.profile-item h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.profile-item p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #7a1f3d;
+    white-space: nowrap;
+}

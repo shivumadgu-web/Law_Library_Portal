@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Law Library</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f8fb;
+            color: #172033;
+        }
+
+        header {
+            background: white;
+            text-align: center;
+            padding: 25px 20px 15px;
+        }
+
+        header img {
+            width: 180px;
+            max-width: 80%;
+        }
+
+        .krc {
+            color: #7a1f3d;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .library {
+            color: #7a1f3d;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 28px;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #172033;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #7a1f3d;
+        }
+
+        .page-title {
+            background: #7a1f3d;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .page-title span {
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .page-title h1 {
+            margin: 10px 0 0;
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .card h2 {
+            color: #7a1f3d;
+            margin-top: 0;
+        }
+
+        .card p {
+            line-height: 1.7;
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .person {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+        }
+
+        .person h3 {
+            margin: 5px 0;
+            color: #7a1f3d;
+            font-size: 17px;
+        }
+
+        .person p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .query {
+            text-align: center;
+            background: #eef5f6;
+        }
+
+        .query-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 24px;
+            background: #7a1f3d;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .query-button:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0f4c5c;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            .team {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .page-title h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <img src="images/MIT-WPU-logo.jpg" alt="MIT-WPU Logo">
+
+    <div class="krc">Knowledge Resource Centre</div>
+    <div class="library">Law Library</div>
+
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="https://shivumadgu-web.github.io/Law_Library_OPAC/">OPAC</a>
+    <a href="e-resources.html">E-Resources</a>
+    <a href="new-arrivals.html">New Arrivals</a>
+    <a href="services.html">Services</a>
+    <a href="about-library.html">About Library</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="page-title">
+    <span>KNOWLEDGE RESOURCE CENTRE</span>
+    <h1>Contact Us</h1>
+</section>
+
+<main class="container">
+
+    <div class="card">
+        <h2>Our Vision</h2>
+        <p>
+            To provide a supportive and technology-enabled learning environment
+            that facilitates access to quality legal information and resources.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Our Mission</h2>
+        <p>
+            To support teaching, learning and research by providing timely access
+            to print and digital resources, library services and research assistance.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Library Team</h2>
+
+        <div class="team">
+
+            <div class="person">
+                <h3>Dr. Praveen Kumar Vaidya</h3>
+                <p>University Librarian</p>
+            </div>
+
+            <div class="person">
+                <h3>Mr. Sanjaykumar Bagade</h3>
+                <p>Assistant Librarian</p>
+            </div>
+
+            <div class="person">
+                <h3>Mr. Shivaraj Madgu</h3>
+                <p>Senior Executive – Library</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card query">
+
+        <h2>Have a Library Query?</h2>
+
+        <p>
+            Need help finding a book, accessing an e-resource, using the OPAC,
+            or have any other library-related query?
+        </p>
+
+        <a href="https://forms.gle/Wb1bxULgBH5g9epL9" 
+   class="query-button" 
+   target="_blank">
+    Submit Your Query
+</a>
+
+    </div>
+
+</main>
+
+<footer>
+    © 2026 MIT-WPU | Law Library
+</footer>
+
+</body>
+</html>

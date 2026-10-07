@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Library | MIT-WPU Law Library</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ================================
+           ABOUT LIBRARY PAGE
+           ================================ */
+
+        .about-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 25px 60px;
+        }
+
+        /* Short Introduction */
+
+        .about-content {
+            max-width: 900px;
+            margin: 25px auto 45px;
+            text-align: center;
+        }
+
+        .about-content p {
+            margin: 8px 0;
+            color: #4d5666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Library Profile */
+
+        .collection-info {
+            margin-top: 20px;
+        }
+
+        .collection-info .section-heading {
+            margin-bottom: 25px;
+        }
+
+        /* One Full Width List */
+
+        .library-profile-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Profile Row */
+
+        .profile-item {
+            display: grid;
+            grid-template-columns: 48px 1fr auto;
+            align-items: center;
+            gap: 14px;
+
+            padding: 11px 16px;
+            min-height: 52px;
+
+            background: #ffffff;
+            border: 1px solid #e3e6ea;
+            border-radius: 10px;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+            transition: 0.2s ease;
+        }
+
+        .profile-item:hover {
+            transform: translateX(3px);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.10);
+        }
+
+        /* Serial Number */
+
+        .profile-item > span {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 8px;
+
+            background: #7a1f3d;
+            color: #ffffff;
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Different Colours */
+
+        .profile-item:nth-child(3n + 2) > span {
+            background: #0f4c5c;
+        }
+
+        .profile-item:nth-child(3n) > span {
+            background: #b26a00;
+        }
+
+        /* Heading */
+
+        .profile-item h3 {
+            margin: 0;
+
+            color: #172033;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* Value */
+
+        .profile-item p {
+            margin: 0;
+
+            color: #7a1f3d;
+            font-size: 15px;
+            font-weight: bold;
+
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* Second Line - Reading Hall Area */
+
+        .profile-item small {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #0f4c5c;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .about-page {
+                padding: 35px 15px 45px;
+            }
+
+            .about-content {
+                margin-bottom: 35px;
+            }
+
+            .profile-item {
+                grid-template-columns: 42px 1fr;
+                gap: 12px;
+                padding: 11px 12px;
+            }
+
+            .profile-item p {
+                grid-column: 2;
+                text-align: left;
+                margin-top: -7px;
+            }
+
+            .profile-item small {
+                grid-column: 2;
+            }
+
+            .profile-item h3 {
+                font-size: 14px;
+            }
+
+            .profile-item p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ================================
+         HEADER
+         ================================ -->
+
+    <header>
+
+        <div class="top-header">
+
+            <div class="brand">
+
+                <img
+                    src="images/MIT-WPU-logo.jpg"
+                    alt="MIT-WPU Logo"
+                >
+
+                <div class="brand-text">
+
+                    <div class="krc">
+                        Knowledge Resource Centre
+                    </div>
+
+                    <div class="library">
+                        Law Library
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="./index.html">
+                Home
+            </a>
+
+            <a href="https://shivumadgu-web.github.io/Law_Library_OPAC/">
+                OPAC
+            </a>
+
+            <a href="e-resources.html">
+                E-Resources
+            </a>
+
+            <a href="new-arrivals.html">
+                New Arrivals
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="./about-library.html">
+                About Library
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================================
+         MAIN CONTENT
+         ================================ -->
+
+    <main>
+
+        <section class="about-page">
+
+
+            <!-- Page Heading -->
+
+            <div class="section-heading">
+
+                <span>
+                    ABOUT
+                </span>
+
+                <h2>
+                    About Law Library
+                </h2>
+
+            </div>
+
+
+            <!-- Short Introduction -->
+
+            <div class="about-content">
+
+                <p>
+                    The Law Library at MIT-WPU provides a dedicated learning and research
+                    environment with print and digital resources to support legal education
+                    and academic research.
+                </p>
+
+                <p>
+                    It offers reading, reference, borrowing, digital resources and research
+                    support services for students, faculty and researchers.
+                </p>
+
+            </div>
+
+
+            <!-- ================================
+                 LIBRARY PROFILE
+                 ================================ -->
+
+            <div class="collection-info">
+
+                <div class="section-heading">
+
+                    <span>
+                        LIBRARY PROFILE
+                    </span>
+
+                    <h2>
+                        At a Glance — Law Library, MIT-WPU
+                    </h2>
+
+                    <p>
+                        Collection, facilities, services and resources
+                    </p>
+
+                </div>
+
+
+                <!-- Profile List -->
+
+                <div class="library-profile-grid">
+
+
+                    <!-- I -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            I
+                        </span>
+
+                        <h3>
+                            No. of Volumes
+                        </h3>
+
+                        <p>
+                            5,849+
+                        </p>
+
+                    </div>
+
+
+                    <!-- II -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            II
+                        </span>
+
+                        <h3>
+                            No. of Titles
+                        </h3>
+
+                        <p>
+                            1,850+
+                        </p>
+
+                    </div>
+
+
+                    <!-- III -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            III
+                        </span>
+
+                        <h3>
+                            Journals
+                        </h3>
+
+                        <p>
+                            8
+                        </p>
+
+                    </div>
+
+
+                    <!-- IV -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            IV
+                        </span>
+
+                        <h3>
+                            Magazines
+                        </h3>
+
+                        <p>
+                            4
+                        </p>
+
+                    </div>
+
+
+                    <!-- V -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            V
+                        </span>
+
+                        <h3>
+                            Newspapers
+                        </h3>
+
+                        <p>
+                            6
+                        </p>
+
+                    </div>
+
+
+                    <!-- VI -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            VI
+                        </span>
+
+                        <h3>
+                            Bound Volumes
+                        </h3>
+
+                        <p>
+                            3,000+
+                        </p>
+
+                    </div>
+
+
+                    <!-- VII -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            VII
+                        </span>
+
+                        <h3>
+                            Legal Databases &amp; News Portals
+                        </h3>
+
+                        <p>
+                            7
+                        </p>
+
+                    </div>
+
+
+                    <!-- VIII -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            VIII
+                        </span>
+
+                        <h3>
+                            Other MIT-WPU Databases
+                        </h3>
+
+                        <p>
+                            37+
+                        </p>
+
+                    </div>
+
+
+                    <!-- IX -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            IX
+                        </span>
+
+                        <h3>
+                            Reading Hall
+                        </h3>
+
+                        <p>
+                            100 seats
+                        </p>
+
+                    </div>
+
+
+                    <!-- X -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            X
+                        </span>
+
+                        <h3>
+                            Library Timing
+                        </h3>
+
+                        <p>
+                            8:15 AM – 6:00 PM
+                        </p>
+
+                    </div>
+
+
+                    <!-- XI -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            XI
+                        </span>
+
+                        <h3>
+                            Issue
+                        </h3>
+
+                        <p>
+                            5 books
+                        </p>
+
+                    </div>
+
+
+                    <!-- XII -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            XII
+                        </span>
+
+                        <h3>
+                            Loan Period
+                        </h3>
+
+                        <p>
+                            15 days
+                        </p>
+
+                    </div>
+
+
+                    <!-- XIII -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            XIII
+                        </span>
+
+                        <h3>
+                            Renewal
+                        </h3>
+
+                        <p>
+                            One-time renewal
+                        </p>
+
+                    </div>
+
+
+                    <!-- XIV -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            XIV
+                        </span>
+
+                        <h3>
+                            Reference
+                        </h3>
+
+                        <p>
+                            All MIT-WPU users
+                        </p>
+
+                    </div>
+
+
+                    <!-- XV -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            XV
+                        </span>
+
+                        <h3>
+                            Borrowing
+                        </h3>
+
+                        <p>
+                            Law users
+                        </p>
+
+                    </div>
+
+
+                    <!-- XVI -->
+
+                    <div class="profile-item">
+
+                        <span>
+                            XVI
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Library Area
+                            </h3>
+
+                            <p>
+                                1,784 sq. ft.
+                            </p>
+
+                            <small>
+                                Reading Hall Area — 1,018 sq. ft.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+         ================================ -->
+
+    <footer>
+
+        <div class="footer-copy">
+            © 2026 MIT-WPU
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Resources | School of Law Library</title>
+
+    <style>
+
+        /* ================================
+           BASIC
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #f7f8fb;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .top-header {
+            height: 125px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand img {
+            width: 350px;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            margin-left: 0;
+        }
+
+        .university {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #687386;
+            margin-bottom: 6px;
+        }
+
+        .krc {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #0f4c5c;
+            margin-bottom: 5px;
+        }
+
+        .library {
+            font-size: 29px;
+            font-weight: 700;
+            color: #0f4c5c;
+            letter-spacing: .2px;
+        }
+
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+
+        nav {
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+            border-top: 1px solid #dce7e9;
+        }
+
+        nav a {
+            color: #263247;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #0f4c5c;
+        }
+
+
+        /* ================================
+           PAGE HERO
+        ================================= */
+
+        .page-hero {
+            background: #155e75;
+            color: #ffffff;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .page-hero span {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #d8e7ea;
+        }
+
+        .page-hero h1 {
+            font-size: 38px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .page-hero p {
+            font-size: 15px;
+            color: #eef6f7;
+        }
+
+
+        /* ================================
+           OPENATHENS
+        ================================= */
+
+        .openathens-section {
+            background: #ffffff;
+            padding: 30px 6%;
+        }
+
+        .openathens-box {
+            max-width: 1000px;
+            margin: auto;
+            background: #eef5f6;
+            border: 1px solid #dce7e9;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .openathens-box h2 {
+            color: #0f4c5c;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .openathens-box p {
+            color: #526174;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .openathens-button {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 13px 28px;
+            background: #0f4c5c;
+            color: #ffffff;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .openathens-button:hover {
+            background: #083c49;
+        }
+
+
+        /* ================================
+           RESOURCES
+        ================================= */
+
+        .resources-section {
+            background: #f7f8fb;
+            padding: 30px 6%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .section-heading span {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #0f4c5c;
+        }
+
+        .section-heading h2 {
+            margin-top: 8px;
+            font-size: 30px;
+            color: #0f4c5c;
+        }
+
+
+        /* ================================
+           CATEGORY
+        ================================= */
+
+        .category {
+            max-width: 1100px;
+            margin: 0 auto 30px;
+        }
+
+        .category-title {
+            font-size: 20px;
+            color: #0f4c5c;
+            margin-bottom: 12px;
+            border-left: 4px solid #0f4c5c;
+            padding-left: 10px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .resource-card {
+            background: #ffffff;
+            border: 1px solid #dce7e9;
+            border-radius: 9px;
+            padding: 17px;
+            box-shadow: 0 3px 12px rgba(15, 76, 92, .06);
+            transition: .2s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(15, 76, 92, .12);
+        }
+
+        .resource-card h3 {
+            color: #0f4c5c;
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .resource-card p {
+            color: #64748b;
+            font-size: 12px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .resource-card a {
+            display: inline-block;
+            color: #ffffff;
+            background: #0f4c5c;
+            padding: 7px 13px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .resource-card a:hover {
+            background: #083c49;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background: #0f4c5c;
+            text-align: center;
+            color: #ffffff;
+            padding: 18px 20px;
+        }
+
+        footer h3 {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        footer p {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        footer small {
+            display: block;
+            color: #d8e7ea;
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 900px) {
+
+            .top-header {
+                height: auto;
+            }
+
+            .brand {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                height: auto;
+                padding: 15px 6%;
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 30px;
+            }
+
+            .openathens-box {
+                padding: 20px 15px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+
+        <div class="top-header">
+
+            <div class="brand">
+
+                <img src="logo.png" alt="MIT World Peace University">
+
+                <div class="brand-text">
+
+                    <div class="university">
+                        MIT WORLD PEACE UNIVERSITY, PUNE
+                    </div>
+
+                    <div class="krc">
+                        Knowledge Resource Centre
+                    </div>
+
+                    <div class="library">
+                        School of Law Library
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        
+    </header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="https://shivumadgu-web.github.io/Law_Library_OPAC/">OPAC</a>
+    <a href="e-resources.html">E-Resources</a>
+    <a href="new-arrivals.html">New Arrivals</a>
+    <a href="services.html">Services</a>
+    <a href="http://127.0.0.1:5500/about-library.html">About Library</a>
+    <a href="index.html#">Contact</a>
+</nav>
+
+    <!-- ================================
+         PAGE HERO
+    ================================= -->
+
+    <section class="page-hero">
+
+        <span>KNOWLEDGE RESOURCE CENTRE</span>
+
+        <h1>E-Resources</h1>
+
+        <p>
+            Access subscribed electronic resources, databases, journals and research platforms.
+        </p>
+
+    </section>
+
+
+    <!-- ================================
+         OPENATHENS
+    ================================= -->
+
+    <section class="openathens-section">
+
+        <div class="openathens-box">
+
+            <h2>
+                Access All E-Resources Through OpenAthens
+            </h2>
+
+            <p>
+                Use your MIT-WPU credentials to access subscribed
+                e-resources through a single sign-on platform.
+            </p>
+
+            <a
+                href="https://login.openathens.net/"
+                target="_blank"
+                class="openathens-button">
+
+                🔐 Open OpenAthens
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         RESOURCE LIST
+    ================================= -->
+
+    <section class="resources-section">
+
+        <div class="section-heading">
+
+            <span>ONLINE RESOURCES</span>
+
+            <h2>Library E-Resources</h2>
+
+        </div>
+
+
+        <!-- LAW -->
+
+        <div class="category">
+
+            <h3 class="category-title">
+                ⚖️ Law
+            </h3>
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3>Manupatra</h3>
+                    <p>Legal research database.</p>
+                    <a href="https://www.manupatrafast.com" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>SCC Online</h3>
+                    <p>Legal research and case law database.</p>
+                    <a href="https://www.scconline.com/?login=true" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>HeinOnline</h3>
+                    <p>Legal journals, books and research resources.</p>
+                    <a href="https://heinonline-org.ap2.proxy.openathens.net/HOL/Welcome" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>LexisNexis</h3>
+                    <p>Legal research and information database.</p>
+                    <a href="https://advance.lexis.com/in?identityprofileid=Z7C4VP63762" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>AIR Database</h3>
+                    <p>All India Reporter legal database.</p>
+                    <a href="https://www.aironline.in/login.html" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>LiveLaw</h3>
+                    <p>Legal news and research resources.</p>
+                    <a href="https://www-livelaw-in.ap2.proxy.openathens.net/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Bar & Bench</h3>
+                    <p>Legal news and information.</p>
+                    <a href="https://www-barandbench-com.ap2.proxy.openathens.net/" target="_blank">Access Resource</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MULTIDISCIPLINARY -->
+
+        <div class="category">
+
+            <h3 class="category-title">
+                📚 Multidisciplinary
+            </h3>
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3>Wiley Online Library</h3>
+                    <p>550 online journal collection.</p>
+                    <a href="https://onlinelibrary.wiley.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>ScienceDirect</h3>
+                    <p>Elsevier journals and books.</p>
+                    <a href="https://www.sciencedirect.com/browse/journals-and-books" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Scopus</h3>
+                    <p>Abstract and citation database.</p>
+                    <a href="https://www.scopus.com/standard/marketing.uri" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Web of Science</h3>
+                    <p>Research and citation database.</p>
+                    <a href="https://www.webofscience.com/wos/woscc/smart-search" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>DELNET</h3>
+                    <p>Library networking and resource sharing.</p>
+                    <a href="https://delnet.in/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>PLOS</h3>
+                    <p>Open access scientific research.</p>
+                    <a href="https://plos.org/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>JSTOR</h3>
+                    <p>Academic journals and scholarly resources.</p>
+                    <a href="https://www.jstor.org/action/showLogin?redirectUri=/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Project MUSE</h3>
+                    <p>Humanities and social sciences resources.</p>
+                    <a href="https://muse.jhu.edu/" target="_blank">Access Resource</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MANAGEMENT -->
+
+        <div class="category">
+
+            <h3 class="category-title">
+                💼 Management
+            </h3>
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3>EBSCO Business Source Complete</h3>
+                    <p>Business and management research database.</p>
+                    <a href="https://search.ebscohost.com" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>SAGE Journals</h3>
+                    <p>Scholarly journals across disciplines.</p>
+                    <a href="https://journals.sagepub.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>SAGE E-Books</h3>
+                    <p>Academic and management e-books.</p>
+                    <a href="https://etext.sagepub.in/etext" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Pearson eLibrary</h3>
+                    <p>Academic e-books and learning resources.</p>
+                    <a href="https://elibrary.in.pearson.com" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Harvard Business Publishing</h3>
+                    <p>Business education and management resources.</p>
+                    <a href="https://hbsp.harvard.edu/home/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Emerald Insight</h3>
+                    <p>Management and business research.</p>
+                    <a href="https://www.emerald.com/insight/" target="_blank">Access Resource</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ENGINEERING -->
+
+        <div class="category">
+
+            <h3 class="category-title">
+                ⚙️ Engineering
+            </h3>
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3>IEEE Xplore</h3>
+                    <p>Engineering and technology research.</p>
+                    <a href="https://ieeexplore.ieee.org/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Knovel</h3>
+                    <p>Engineering reference and technical information.</p>
+                    <a href="https://app.knovel.com/kn" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>OnePetro</h3>
+                    <p>Oil and gas technical literature.</p>
+                    <a href="https://onepetro.org/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Society of Exploration Geophysicists</h3>
+                    <p>Geophysics research and publications.</p>
+                    <a href="https://pubs.geoscienceworld.org/seg" target="_blank">Access Resource</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHARMACY / SCIENCE -->
+
+        <div class="category">
+
+            <h3 class="category-title">
+                🔬 Pharmacy & Science
+            </h3>
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3>ACS Publications</h3>
+                    <p>Chemistry research journals and publications.</p>
+                    <a href="https://pubs.acs.org/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Reaxys</h3>
+                    <p>Chemistry and pharmaceutical research database.</p>
+                    <a href="https://www.reaxys.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>JoVE</h3>
+                    <p>Video-based scientific research and education.</p>
+                    <a href="https://app.jove.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>J-Gate</h3>
+                    <p>Academic journal discovery platform.</p>
+                    <a href="https://jgatenext.com/" target="_blank">Access Resource</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ECONOMICS / DATA -->
+
+        <div class="category">
+
+            <h3 class="category-title">
+                📊 Economics & Data
+            </h3>
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3>EPWRF India Time Series</h3>
+                    <p>Indian economic and financial data.</p>
+                    <a href="http://www.epwrfits.in/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>EPW Online</h3>
+                    <p>Economic and political weekly research.</p>
+                    <a href="https://www.epw.in/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>ProwessIQ</h3>
+                    <p>Indian corporate and financial database.</p>
+                    <a href="https://prowess.cmie.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>CMIE Industry Outlook</h3>
+                    <p>Industry and economic information.</p>
+                    <a href="https://industryoutlook.cmie.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>CMIE TradeDx</h3>
+                    <p>Trade and economic data.</p>
+                    <a href="https://tradedx.cmie.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>CMIE Economic Outlook</h3>
+                    <p>Indian economic data and analysis.</p>
+                    <a href="https://economicoutlook.cmie.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>CMIE Consumer Pyramids</h3>
+                    <p>Household and consumer data.</p>
+                    <a href="https://consumerpyramidsdx.cmie.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>CMIE States of India</h3>
+                    <p>State-level economic and social data.</p>
+                    <a href="https://statesofindia.cmie.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>CMIE CapEx</h3>
+                    <p>Investment and project data.</p>
+                    <a href="https://capex.cmie.com" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>CMIE Commodities</h3>
+                    <p>Commodity market information.</p>
+                    <a href="https://commodities.cmie.com" target="_blank">Access Resource</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OTHER -->
+
+        <div class="category">
+
+            <h3 class="category-title">
+                🌐 Other Academic Resources
+            </h3>
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3>Passport</h3>
+                    <p>Euromonitor International market research.</p>
+                    <a href="https://www.portal.euromonitor.com/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>EPW Online Magazine</h3>
+                    <p>Research and current affairs publication.</p>
+                    <a href="https://www.epw.in/" target="_blank">Access Resource</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>McGraw Hill eBooks</h3>
+                    <p>Academic and professional e-books.</p>
+                    <a href="https://bookshelf.vitalsource.com/home/explore" target="_blank">Access Resource</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <h3>
+            MIT WORLD PEACE UNIVERSITY, PUNE
+        </h3>
+
+        <p>
+            Knowledge Resource Centre | School of Law Library
+        </p>
+
+        <small>
+            E-Resources
+        </small>
+
+    </footer>
+
+
+</body>
+
+</html>
+```

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals | Law Library</title>
+
+    <style>
+        /* ================================
+           RESET & BASIC STYLES
+        ================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #f7f8fb;
+            /* Prevents scrolling and fills the screen */
+            overflow: hidden; 
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        a {
+            text-decoration: none;
+        }
+/* ================================
+   HEADER & NAVIGATION
+================================= */
+
+.top-header {
+    background: #ffffff;
+    padding: 12px 40px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand img {
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.krc {
+    color: #7a1f3d;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.library {
+    color: #7a1f3d;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    background: #ffffff;
+    padding: 14px 20px;
+    border-top: 1px solid #ead9df;
+    border-bottom: 1px solid #ead9df;
+}
+
+nav a {
+    color: #172033;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: #7a1f3d;
+    border-bottom-color: #7a1f3d;
+}
+        /* ================================
+           HERO BANNER (EXPANDED FOR F11)
+        ================================= */
+        .page-hero {
+            background: #155e75;
+            color: #ffffff;
+            text-align: center;
+            padding: 24px 20px;
+            flex-shrink: 0;
+        }
+
+        .page-hero span {
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #d8e7ea;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .page-hero h1 {
+            font-size: 34px;
+            font-weight: 700;
+        }
+
+        /* ================================
+           3D CAROUSEL STAGE
+        ================================= */
+        .new-arrivals {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            background: #f7f8fb;
+        }
+
+        .carousel-stage-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #e4e4e4 0%, #cccccc 100%);
+            border: 1px solid #bbbbbb;
+            border-radius: 8px;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            user-select: none;
+            overflow: hidden;
+        }
+
+        .carousel-3d-stage {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            perspective: 950px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ring-carousel {
+            position: absolute;
+            width: 85px;
+            height: 125px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.3, 1);
+        }
+
+        .ring-book-item {
+            position: absolute;
+            width: 85px;
+            height: 125px;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+            backface-visibility: visible;
+            transform-style: preserve-3d;
+            transition: opacity 0.4s, filter 0.4s;
+        }
+
+        .book-card {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            border-radius: 2px;
+            overflow: hidden;
+            -webkit-box-reflect: below 2px linear-gradient(transparent, transparent 65%, rgba(255, 255, 255, 0.25));
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        /* ================================
+           FALLBACK MIT-WPU CARD
+        ================================= */
+        .placeholder-card {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #0f4c5c;
+            box-sizing: border-box;
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .circle-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #0f4c5c;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .placeholder-brand {
+            font-size: 9px;
+            font-weight: 800;
+            color: #0f4c5c;
+            line-height: 1.2;
+        }
+
+        .placeholder-sub {
+            font-size: 7px;
+            color: #666666;
+            font-weight: bold;
+        }
+
+        /* ================================
+           CONTROLS & TITLE DISPLAY
+        ================================= */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border: 1px solid #000000;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #000000;
+            font-size: 26px;
+            line-height: 38px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-prev { left: 12px; }
+        .carousel-next { right: 12px; }
+
+        .active-book-info {
+            background: #ffffff;
+            color: #000000;
+            text-align: center;
+            padding: 12px 16px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 12px auto 0;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .active-book-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .active-book-author {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f4c5c;
+            margin-top: 4px;
+        }
+
+        /* ================================
+           CLEAN SINGLE-LINE FOOTER
+        ================================= */
+        footer {
+            background: #0f4c5c;
+            color: #ffffff;
+            text-align: center;
+            padding: 18px 15px;
+            flex-shrink: 0;
+        }
+
+        footer p {
+            font-size: 15px;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        footer strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="top-header">
+            <div class="brand">
+                <img src="images/MIT-WPU-logo.jpg" alt="MIT-WPU Logo">
+                <div class="brand-text">
+                    <div class="krc">Knowledge Resource Centre</div>
+                    <div class="library">Law Library</div>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="https://shivumadgu-web.github.io/Law_Library_OPAC/">OPAC</a>
+            <a href="e-resources.html">E-Resources</a>
+            <a href="new-arrivals.html">New Arrivals</a>
+            <a href="./services.html">Services</a>
+            <a href="./about-library.html">About Library</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <!-- HERO BANNER -->
+    <section class="page-hero">
+        <span>LAW LIBRARY</span>
+        <h1>New Arrivals</h1>
+    </section>
+
+    <!-- NEW ARRIVALS 3D STAGE -->
+    <section class="new-arrivals">
+
+        <div class="carousel-stage-wrapper" id="carouselWrapper">
+            <button class="carousel-arrow carousel-prev" id="prevBtn" title="Previous Book">&#8249;</button>
+            <button class="carousel-arrow carousel-next" id="nextBtn" title="Next Book">&#8250;</button>
+
+            <div class="carousel-3d-stage">
+                <div class="ring-carousel" id="ringCarousel"></div>
+            </div>
+        </div>
+
+        <!-- ACTIVE BOOK TITLE & AUTHOR BANNER -->
+        <div class="active-book-info">
+            <div class="active-book-title" id="activeTitle">Loading Law Library Arrivals...</div>
+            <div class="active-book-author" id="activeAuthor"></div>
+        </div>
+
+    </section>
+
+    <!-- CLEAN FOOTER -->
+    <footer>
+        <p>
+            Implemented by <strong>Mr. Shivaraj Madgu</strong> | Senior Executive Library, MIT-WPU @2026
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const isbnList = [
+            "9789352204106", "9789387408807", "9789350910771", "9789350910764", "9789357200479",
+            "9789389657340", "9789386273260", "9788184984088", "9788119500727", "9789357201674",
+            "9788171857234", "9789352203093", "9789350911716", "9788177667462", "9788198241757",
+            "9788119500321", "9788177666403", "9789391282325", "9789352203352", "9788197443466"
+        ];
+
+        const fallbackDatabase = {
+            "9789352204106": { title: "Constitutional Law of India", author: "Dr. J.N. Pandey" },
+            "9789387408807": { title: "Indian Penal Code", author: "K.D. Gaur" },
+            "9789350910771": { title: "Law of Torts", author: "R.K. Bangia" },
+            "9789350910764": { title: "Contract I & Specific Relief", author: "Dr. R.K. Bangia" },
+            "9789357200479": { title: "Public Health, Ethics, and Equity", author: "Sudhir Anand, Fabienne Peter & Amartya Sen" },
+            "9789389657340": { title: "Company Law", author: "Avtar Singh" },
+            "9789386273260": { title: "Biostatistics for Health Sciences", author: "Wayne W. Daniel" },
+            "9788184984088": { title: "Research Design", author: "John W. Creswell" },
+            "9788119500727": { title: "A Textbook of Microbiology", author: "Dr. R.C. Dubey" },
+            "9789357201674": { title: "Environmental Law", author: "P.S. Jaswal" },
+            "9788171857234": { title: "Mrutyunjay", author: "Shivaji Sawant" },
+            "9789352203093": { title: "Gulamagiri", author: "Mahatma Jyotirao Phule" },
+            "9789350911716": { title: "Jurisprudence and Legal Theory", author: "Dr. V.D. Mahajan" },
+            "9788177667462": { title: "Yashachi Marg (Road to Success)", author: "Napoleon Hill" },
+            "9788198241757": { title: "Yayati", author: "V.S. Khandekar" },
+            "9788119500321": { title: "Interpretation of Statutes", author: "V.P. Sarathi" },
+            "9788177666403": { title: "Human Rights in India", author: "Justice H.O. Agarwal" },
+            "9789391282325": { title: "Code of Civil Procedure", author: "C.K. Takwani" },
+            "9789352203352": { title: "Law of Evidence", author: "Batuk Lal" },
+            "9788197443466": { title: "Administrative Law", author: "I.P. Massey" }
+        };
+
+        const uniqueISBNs = [...new Set(isbnList)];
+        let loadedBooks = [];
+        let activeIndex = 0;
+        let autoRotateTimer = null;
+
+        const ringCarousel = document.getElementById('ringCarousel');
+        const activeTitle = document.getElementById('activeTitle');
+        const activeAuthor = document.getElementById('activeAuthor');
+        const carouselWrapper = document.getElementById('carouselWrapper');
+
+        function createPlaceholderHTML() {
+            return `
+                <div class="placeholder-card">
+                    <div class="circle-badge">L</div>
+                    <div class="placeholder-brand">MIT-WPU LAW</div>
+                    <div class="placeholder-sub">COVER NOT AVAILABLE</div>
+                </div>
+            `;
+        }
+
+        fetch("books.json")
+            .then(res => res.json())
+            .then(booksData => {
+                loadedBooks = uniqueISBNs.map((isbn) => {
+                    const cleanIsbn = String(isbn).replace(/[^0-9Xx]/g, "");
+                    const match = booksData.find(b => String(b.isbn).replace(/[^0-9Xx]/g, "") === cleanIsbn);
+                    const fallback = fallbackDatabase[cleanIsbn] || { title: "Law Book (" + isbn + ")", author: "School of Law, MIT-WPU" };
+
+                    return {
+                        isbn: isbn,
+                        title: match && match.title ? match.title.trim() : fallback.title,
+                        author: match && match.author ? match.author.trim() : fallback.author,
+                        coverUrl: `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`
+                    };
+                });
+                init3DRingCarousel();
+            })
+            .catch(() => {
+                loadedBooks = uniqueISBNs.map((isbn) => {
+                    const cleanIsbn = String(isbn).replace(/[^0-9Xx]/g, "");
+                    const fallback = fallbackDatabase[cleanIsbn] || { title: "Law Book (" + isbn + ")", author: "School of Law, MIT-WPU" };
+                    return {
+                        isbn: isbn,
+                        title: fallback.title,
+                        author: fallback.author,
+                        coverUrl: `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`
+                    };
+                });
+                init3DRingCarousel();
+            });
+
+        function init3DRingCarousel() {
+            renderRing();
+            startAutoRotate();
+        }
+
+        function renderRing() {
+            ringCarousel.innerHTML = "";
+            const N = loadedBooks.length;
+            if (N === 0) return;
+
+            const radius = Math.round((85 / 2) / Math.tan(Math.PI / N));
+            const angleStep = 360 / N;
+
+            loadedBooks.forEach((book, i) => {
+                const bookAngle = i * angleStep;
+                const item = document.createElement("div");
+                item.className = "ring-book-item";
+                item.style.transform = `rotateY(${bookAngle}deg) translateZ(${radius}px)`;
+
+                const card = document.createElement("div");
+                card.className = "book-card";
+
+                const img = document.createElement("img");
+                img.src = book.coverUrl;
+                img.alt = book.title;
+                img.onerror = function() {
+                    card.innerHTML = createPlaceholderHTML();
+                };
+
+                card.appendChild(img);
+                item.appendChild(card);
+
+                item.addEventListener("click", () => {
+                    activeIndex = i;
+                    updateRingPosition();
+                    resetAutoRotate();
+                });
+
+                ringCarousel.appendChild(item);
+            });
+
+            updateRingPosition();
+        }
+
+        function updateRingPosition() {
+            const N = loadedBooks.length;
+            if (N === 0) return;
+
+            const angleStep = 360 / N;
+            const targetAngle = -activeIndex * angleStep;
+
+            ringCarousel.style.transform = `rotateX(-9deg) rotateY(${targetAngle}deg)`;
+
+            const allItems = ringCarousel.querySelectorAll('.ring-book-item');
+
+            allItems.forEach((item, i) => {
+                let stepDiff = (i - activeIndex) % N;
+                if (stepDiff < -N / 2) stepDiff += N;
+                if (stepDiff > N / 2) stepDiff -= N;
+
+                const absDiff = Math.abs(stepDiff);
+
+                if (absDiff === 0) {
+                    item.style.opacity = "1";
+                    item.style.filter = "brightness(1.05)";
+                } else if (absDiff <= 3) {
+                    item.style.opacity = "0.95";
+                    item.style.filter = "brightness(0.95)";
+                } else {
+                    item.style.opacity = "0.85";
+                    item.style.filter = "brightness(0.85)";
+                }
+            });
+
+            const currentBook = loadedBooks[activeIndex];
+            activeTitle.textContent = currentBook.title;
+            activeAuthor.textContent = currentBook.author ? "Author: " + currentBook.author : "";
+        }
+
+        function startAutoRotate() {
+            stopAutoRotate();
+            autoRotateTimer = setInterval(() => {
+                activeIndex = (activeIndex + 1) % loadedBooks.length;
+                updateRingPosition();
+            }, 3000);
+        }
+
+        function stopAutoRotate() {
+            if (autoRotateTimer) {
+                clearInterval(autoRotateTimer);
+                autoRotateTimer = null;
+            }
+        }
+
+        function resetAutoRotate() {
+            stopAutoRotate();
+            startAutoRotate();
+        }
+
+        carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
+        carouselWrapper.addEventListener('mouseleave', startAutoRotate);
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            activeIndex = (activeIndex - 1 + loadedBooks.length) % loadedBooks.length;
+            updateRingPosition();
+            resetAutoRotate();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            activeIndex = (activeIndex + 1) % loadedBooks.length;
+            updateRingPosition();
+            resetAutoRotate();
+        });
+    </script>
+</body>
+
+</html>
