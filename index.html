@@ -38,7 +38,7 @@
     <nav>
 
         <a href="#">Home</a>
-        <a href="https://shivumadgu-web.github.io/Law_Library_OPAC/">OPAC</a>
+        <a href="https://shivumadgu-web.github.io/Law_Library_OPAC/index.html">OPAC</a>
         <a href="e-resources.html">E-Resources</a>
         <a href="new-arrivals.html">New Arrivals</a>
         <a href="services.html">Services</a>
@@ -156,7 +156,7 @@
     <h3>OpenAthens</h3>
     <p>Remote Access to e-resources using your official MIT-WPU ID.</p>
 </a>
-         <a href="https://shivumadgu-web.github.io/Law_Library_OPAC/" class="service-card" target="_blank">
+<a href="https://shivumadgu-web.github.io/Law_Library_OPAC/index.html" class="service-card">
     <div>🔎</div>
     <h3>OPAC Search</h3>
     <p>Search and find books available in the Law Library.</p>
@@ -202,7 +202,7 @@ function openOPACSearch() {
         "https://shivumadgu-web.github.io/Law_Library_OPAC/index.html?q=" +
         encodeURIComponent(query);
 
-    window.open(opacUrl, "_blank");
+    window.location.href = opacUrl;
 }
 </script>
 
